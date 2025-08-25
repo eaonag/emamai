@@ -1,0 +1,63 @@
+/**
+ * CSS Reset and Base Styles
+ * Provides consistent cross-browser styling and foundational rules
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap');
+
+/* Base Reset and Mobile-First Approach */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ffffff;
+  overscroll-behavior: none;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+  user-select: none;
+  background-color: #ffffff;
+  overscroll-behavior: none;
+  height: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Allow text selection in input fields */
+input, textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Remove all browser default focus styles and blue blink effects */
+button:focus,
+button:focus-visible,
+button:active,
+input[type="submit"]:focus,
+input[type="button"]:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+*:focus-visible {
+  outline: none !important;
+}

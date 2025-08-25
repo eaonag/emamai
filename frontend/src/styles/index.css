@@ -1,0 +1,21 @@
+/**
+ * Main Styles Index
+ * Central import file for all application styles
+ * Organized by purpose and component hierarchy
+ */
+
+/* Base Styles - Foundation */
+@import './base/reset.css';
+
+/* Layout Styles - Structure */
+@import './layout/app.css';
+
+/* Component Styles - UI Elements */
+@import './components/header.css';
+@import './components/drawer.css';
+@import './components/bottom-navigation.css';
+@import './components/chat.css';
+@import './components/pamphlets.css';
+@import './components/pamphlet-view.css';
+@import './components/qa-chatbox.css';
+@import './components/ui.css';

@@ -1,0 +1,97 @@
+/**
+ * App Layout Styles
+ * Core application layout and main container styling
+ */
+
+.App {
+  text-align: left;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  padding-top: 80px;
+  background-color: #ffffff;
+  min-height: 100dvh;
+  height: 100dvh;
+  overscroll-behavior: none;
+  overflow-y: hidden;
+  padding-bottom: 120px;
+}
+
+/* Main content padding to account for bottom nav */
+.main-content {
+  flex: 1;
+  padding: 0;
+  margin-bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100dvh - 80px - 120px);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Content Container Styles */
+.content-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+}
+
+.empty-section {
+  min-height: calc(100vh - 160px);
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    padding-top: 55px;
+    height: 100dvh;
+    overflow-y: hidden;
+  }
+  
+  .main-content {
+    height: calc(100dvh - 55px - 90px);
+    padding: 0;
+    margin-bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #ffffff;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+    box-sizing: border-box;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    min-height: calc(100dvh - 55px - 90px);
+  }
+  
+  .content-container {
+    padding: 16px;
+  }
+  
+  .empty-section {
+    min-height: calc(100vh - 140px);
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding-top: 60px;
+  }
+  
+  .main-content {
+    height: calc(100vh - 60px - 80px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+}

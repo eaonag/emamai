@@ -1,0 +1,147 @@
+/**
+ * Bottom Navigation Component Styles
+ * Fixed bottom navigation bar with tab items
+ */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  isolation: isolate;
+  padding: 0;
+  z-index: 1000;
+}
+
+.bottom-nav-tabs {
+  display: flex;
+  padding: 12px 0;
+}
+
+.bottom-nav-chatbox {
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bottom-nav-chatbox .qa-chatbox-fixed {
+  position: static;
+  bottom: auto;
+  background: transparent;
+  border-top: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  z-index: auto;
+}
+
+/* Responsive adjustments for chatbox */
+@media (min-width: 768px) {
+  .bottom-nav-chatbox {
+    padding: 12px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-nav-chatbox {
+    padding: 12px 16px;
+  }
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  flex: 1;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.bottom-nav-item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 55px;
+}
+
+.bottom-nav-item:active .bottom-nav-item-content {
+  background-color: rgba(4, 120, 87, 0.08);
+  transform: scale(0.95);
+}
+
+.bottom-nav-item.active .bottom-nav-item-content {
+  background-color: rgba(4, 120, 87, 0.12);
+}
+
+.bottom-nav-icon {
+  width: 22px;
+  height: 22px;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.bottom-nav-item.active .bottom-nav-icon {
+  transform: scale(1.1);
+}
+
+.bottom-nav-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #5f6368;
+  transition: color 0.15s ease;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+  color: #047857;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .bottom-nav {
+    padding: 8px 18px;
+    gap: 10px;
+  }
+  
+  .bottom-nav-item-content {
+    padding: 10px 16px;
+    min-width: 65px;
+  }
+  
+  .bottom-nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .bottom-nav-item.active .bottom-nav-icon {
+    transform: scale(1.1);
+  }
+  
+  .bottom-nav-label {
+    font-size: 12px;
+  }
+}

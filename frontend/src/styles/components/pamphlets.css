@@ -1,0 +1,555 @@
+/**
+ * Pamphlet Components Styles
+ * Grid view and individual pamphlet card styling
+ */
+
+/* Pamphlets Container - Mobile-First Approach */
+.pamphlets-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: clamp(16px, 4vw, 32px) clamp(16px, 3vw, 24px);
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  max-width: min(100vw, 1440px);
+  width: 100%;
+  container-type: inline-size;
+}
+
+/* Header Section */
+.pamphlets-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: clamp(24px, 5vw, 48px);
+  padding: clamp(16px, 3vw, 24px);
+  gap: clamp(8px, 2vw, 16px);
+}
+
+.pamphlets-title {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.pamphlets-subtitle {
+  font-size: clamp(14px, 3vw, 18px);
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* Professional Grid System */
+.pamphlets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(20px, 4vw, 40px);
+  margin: 0 clamp(4px, 1vw, 8px) clamp(20px, 4vw, 40px);
+  padding: 0 clamp(8px, 2vw, 16px) clamp(20px, 4vw, 40px);
+  width: calc(100% - clamp(16px, 4vw, 32px));
+  grid-auto-rows: minmax(400px, auto);
+  place-items: stretch;
+  justify-content: center;
+}
+
+/* Professional Card Design */
+.pamphlet-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  min-height: clamp(450px, 55vh, 600px);
+  height: 100%;
+  outline: none;
+}
+
+.pamphlet-card:hover {
+  box-shadow: 
+    0 10px 25px 0 rgba(0, 0, 0, 0.1),
+    0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+.pamphlet-card:focus,
+.pamphlet-card:focus-within,
+.pamphlet-card:active {
+  outline: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Card Image */
+.pamphlet-card-image {
+  width: 100%;
+  height: clamp(160px, 25vh, 220px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pamphlet-card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+/* Card Header */
+.pamphlet-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(12px, 2.5vw, 20px) clamp(16px, 3vw, 24px) 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pamphlet-category-badge {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  color: #ffffff;
+  padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 16px);
+  border-radius: 20px;
+  font-size: clamp(10px, 2vw, 12px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(4, 120, 87, 0.2);
+  white-space: nowrap;
+}
+
+.pamphlet-read-time {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 1vw, 8px);
+  color: #666;
+  font-size: clamp(12px, 2.5vw, 14px);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pamphlet-read-time svg {
+  color: #047857;
+  width: clamp(14px, 2.5vw, 16px);
+  height: clamp(14px, 2.5vw, 16px);
+}
+
+/* Card Content */
+.pamphlet-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: clamp(16px, 3vw, 24px);
+  gap: clamp(8px, 2vw, 16px);
+  justify-content: space-between;
+  min-height: 0;
+}
+
+.pamphlet-title {
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.4;
+  font-family: 'Noto Naskh Arabic', 'Amiri', Arial, sans-serif;
+  text-align: right;
+  direction: rtl;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.pamphlet-description {
+  font-size: clamp(15px, 3vw, 18px);
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+  font-family: 'Noto Naskh Arabic', 'Amiri', Arial, sans-serif;
+  font-weight: 600;
+  text-align: right;
+  direction: rtl;
+  word-wrap: break-word;
+  hyphens: auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+
+/* Card Actions */
+.pamphlet-card-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 clamp(16px, 3vw, 24px) clamp(16px, 3vw, 24px);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+/* Tags Section */
+.pamphlet-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(6px, 1.5vw, 10px);
+  padding: 0 clamp(16px, 3vw, 24px) clamp(12px, 2vw, 16px);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.pamphlet-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: clamp(4px, 1vw, 6px) clamp(8px, 2vw, 12px);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+  border-radius: 20px;
+  font-size: clamp(10px, 2vw, 12px);
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  text-transform: none;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(3, 105, 161, 0.1);
+  cursor: default;
+}
+
+/* Action Button */
+.pamphlet-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.5vw, 10px);
+  padding: clamp(10px, 2.5vw, 14px) clamp(20px, 4vw, 28px);
+  border-radius: 12px;
+  border: none;
+  font-size: clamp(13px, 2.5vw, 15px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(40px, 8vw, 48px);
+  min-width: clamp(100px, 20vw, 140px);
+  width: 100%;
+  max-width: 200px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.pamphlet-action-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.pamphlet-action-btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.pamphlet-action-btn:focus,
+.pamphlet-action-btn:active,
+.pamphlet-action-btn:focus-visible {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Primary Button */
+.pamphlet-action-btn.primary {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.25);
+}
+
+.pamphlet-action-btn.primary:hover {
+  box-shadow: 0 6px 16px rgba(4, 120, 87, 0.35);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.pamphlet-action-btn.primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(4, 120, 87, 0.3);
+}
+
+.pamphlet-action-btn.primary:focus,
+.pamphlet-action-btn.primary:focus-visible {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Secondary Button */
+.pamphlet-action-btn.secondary {
+  background: #ffffff;
+  color: #047857;
+  border: 2px solid #047857;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.pamphlet-action-btn.secondary:hover {
+  background: rgba(4, 120, 87, 0.05);
+  box-shadow: 0 4px 12px rgba(4, 120, 87, 0.15);
+  transform: translateY(-2px);
+  border-color: #059669;
+}
+
+.pamphlet-action-btn.secondary:active {
+  transform: translateY(0);
+  background: rgba(4, 120, 87, 0.1);
+  box-shadow: 0 2px 6px rgba(4, 120, 87, 0.2);
+}
+
+.pamphlet-action-btn.secondary:focus,
+.pamphlet-action-btn.secondary:focus-visible {
+  outline: none !important;
+  border: 2px solid #047857 !important;
+}
+
+/* Button Icons */
+.pamphlet-action-btn svg {
+  transition: transform 0.3s ease;
+  width: clamp(16px, 3vw, 20px);
+  height: clamp(16px, 3vw, 20px);
+}
+
+.pamphlet-action-btn:hover svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  margin: 0 0 32px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (min-width: 480px) {
+  .pamphlets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .pamphlets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+  }
+  
+  .section-header p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pamphlets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  
+  .pamphlet-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .pamphlet-action-btn:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .pamphlets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .pamphlets-container {
+    max-width: 1400px;
+    padding: clamp(24px, 4vw, 40px) clamp(64px, 8vw, 120px);
+  }
+  
+  .pamphlets-header {
+    margin-bottom: clamp(20px, 3vw, 32px);
+    padding: clamp(12px, 2vw, 16px);
+  }
+  
+  .pamphlets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: clamp(36px, 5vw, 56px);
+    padding: clamp(32px, 5vw, 56px) clamp(48px, 6vw, 72px) clamp(48px, 6vw, 72px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pamphlets-container {
+    padding: clamp(12px, 3vw, 20px) clamp(16px, 4vw, 24px);
+    min-height: calc(100vh - 55px - 90px);
+  }
+  
+  .pamphlets-header {
+    margin-bottom: clamp(16px, 4vw, 32px);
+    padding: clamp(12px, 2vw, 16px) clamp(8px, 2vw, 12px);
+  }
+  
+  .pamphlets-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 5vw, 28px);
+    padding: 0 clamp(8px, 2vw, 16px) clamp(60px, 15vw, 100px);
+    margin: 0 clamp(8px, 2vw, 16px);
+    margin-bottom: 0;
+  }
+  
+  .pamphlet-card {
+    min-height: clamp(350px, 55vh, 420px);
+    max-width: 100%;
+  }
+  
+  .pamphlet-card-image {
+    height: clamp(140px, 20vh, 180px);
+  }
+  
+  .pamphlet-title {
+    font-size: clamp(16px, 4vw, 20px);
+    line-height: 1.5;
+    font-family: 'Noto Naskh Arabic', 'Amiri', Arial, sans-serif;
+    font-weight: 700;
+  }
+  
+  .pamphlet-description {
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.6;
+    font-family: 'Noto Naskh Arabic', 'Amiri', Arial, sans-serif;
+    font-weight: 600;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+  }
+  
+  .pamphlet-action-btn {
+    min-height: clamp(44px, 10vw, 52px);
+    font-size: clamp(14px, 3vw, 16px);
+    padding: clamp(12px, 3vw, 16px) clamp(24px, 5vw, 32px);
+  }
+  
+  .section-header {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pamphlets-container {
+    padding: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 20px);
+    gap: clamp(12px, 3vw, 20px);
+  }
+  
+  .pamphlets-grid {
+    gap: clamp(18px, 4vw, 24px);
+    padding: 0 clamp(12px, 3vw, 20px) clamp(80px, 20vw, 120px);
+    margin: 0 clamp(8px, 2vw, 16px);
+  }
+  
+  .pamphlet-card {
+    min-height: clamp(330px, 50vh, 380px);
+    border-radius: 12px;
+  }
+  
+  .pamphlet-card-image {
+    height: clamp(120px, 18vh, 160px);
+  }
+  
+  .pamphlet-card-content {
+    padding: clamp(12px, 3vw, 18px);
+    gap: clamp(6px, 1.5vw, 12px);
+  }
+  
+  .pamphlet-card-actions {
+    padding: 0 clamp(12px, 3vw, 18px) clamp(12px, 3vw, 18px);
+  }
+  
+  .pamphlet-action-btn {
+    min-height: clamp(40px, 9vw, 48px);
+    min-width: clamp(80px, 18vw, 120px);
+    font-size: clamp(12px, 2.8vw, 14px);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1023px) {
+  .pamphlets-container {
+    padding: clamp(16px, 3vw, 32px) clamp(20px, 4vw, 40px);
+  }
+  
+  .pamphlets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(24px, 5vw, 36px);
+    padding: 0 clamp(16px, 3vw, 24px) clamp(40px, 8vw, 60px);
+    margin: 0 clamp(12px, 2.5vw, 20px);
+  }
+  
+  .pamphlet-card {
+    min-height: clamp(370px, 50vh, 440px);
+  }
+  
+  .pamphlet-card-image {
+    height: clamp(160px, 22vh, 200px);
+  }
+  
+  .pamphlet-action-btn {
+    min-height: clamp(44px, 8vw, 50px);
+    min-width: clamp(120px, 22vw, 160px);
+  }
+}

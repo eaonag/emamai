@@ -1,0 +1,76 @@
+/**
+ * Language Popup Component Styles
+ * Dropdown menu for language selection with smooth animations
+ */
+
+.language-popup-container {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  /* Solid background instead of glassmorphism */
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  /* Layout and Animation */
+  border-radius: 8px;
+  width: 120px;
+  z-index: 1000;
+  padding: 8px 0;
+  animation: fadeInScale 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #1f2937;
+  font-family: 'Roboto', 'Noto Sans', 'Noto Sans Devanagari', 'Noto Naskh Arabic', sans-serif;
+  font-weight: 500;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.language-item:active {
+  background-color: rgba(4, 120, 87, 0.08);
+  transform: scale(0.98);
+}
+
+.language-name {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tick-icon {
+  color: #1a73e8;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.separator {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
